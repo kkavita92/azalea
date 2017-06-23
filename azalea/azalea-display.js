@@ -1,44 +1,52 @@
-var failures = 0;
-var numberOfTests = 0;
+(function(exports) {
 
-function error(errorMessage) {
-  test.innerHTML += `<p class='fail'>${errorMessage}</p>`
-};
+  var failures = 0;
+  var numberOfTests = 0;
 
-function runErrorProcess(errorMessage) {
-  failures++;
-  error(errorMessage);
-  var list = test.getElementsByTagName("LI")
-  list[list.length - 1].className = "fail";
-};
+  function error(errorMessage) {
+    test.innerHTML += `<p class='fail'>${errorMessage}</p>`
+  };
 
-function describe(testHeading, func) {
-  document
-  .getElementById("test")
-  .innerHTML += `<h3>${testHeading}</h3>`;
-  func();
-  testCounter();
-};
+  function runErrorProcess(errorMessage) {
+    failures++;
+    error(errorMessage);
+    var list = test.getElementsByTagName("LI")
+    list[list.length - 1].className = "fail";
+  };
 
-function it(description, block) {
-  try {
-    numberOfTests++;
+  function describe(testHeading, func) {
     document
     .getElementById("test")
-    .innerHTML += `<li>${description}</li>`;
-    block();
-  } catch(error) {
-    errorMessage = `- ${error.stack}`
-    runErrorProcess(errorMessage);
+    .innerHTML += `<h3>${testHeading}</h3>`;
+    func();
+    testCounter();
   };
-};
 
-function testCounter() {
-  var fails;
-  var color;
-  failures === 1 ? fails = 'failure' : fails = 'failures';
-  failures ? color = 'red' : color = '#00cc00';
-  document
-  .getElementById("test-report")
-  .innerHTML = `<span style="color:${color}">${numberOfTests} tests, ${failures} ${fails}</span>`;
-};
+  function it(description, block) {
+    try {
+      numberOfTests++;
+      document
+      .getElementById("test")
+      .innerHTML += `<li>${description}</li>`;
+      block();
+    } catch(error) {
+      errorMessage = `- ${error.stack}`
+      runErrorProcess(errorMessage);
+    };
+  };
+
+  function testCounter() {
+    var fails;
+    var color;
+    failures === 1 ? fails = 'failure' : fails = 'failures';
+    failures ? color = 'red' : color = '#00cc00';
+    document
+    .getElementById("test-report")
+    .innerHTML = `<span style="color:${color}">${numberOfTests} tests, ${failures} ${fails}</span>`;
+  };
+
+  exports.describe = describe;
+  exports.it = it;
+  exports.runErrorProcess = runErrorProcess;
+
+})(this);
