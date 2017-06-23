@@ -1,4 +1,5 @@
-Insert useful instructions here
+## What is Azalea? 
+Azalea is our valiant attempt at writing a JS testing framework. Feel free to contribute! 
 
 ## Upcoming Features:
 * Running Azalea from command line
