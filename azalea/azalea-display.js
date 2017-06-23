@@ -1,12 +1,11 @@
 var failures = 0;
 var numberOfTests = 0;
-var errorMessage;
 
 function error(errorMessage) {
   test.innerHTML += `<p class='fail'>${errorMessage}</p>`
 };
 
-function runErrorProcess() {
+function runErrorProcess(errorMessage) {
   failures++;
   error(errorMessage);
   var list = test.getElementsByTagName("LI")
@@ -30,7 +29,7 @@ function it(description, block) {
     block();
   } catch(error) {
     errorMessage = `- ${error.stack}`
-    runErrorProcess();
+    runErrorProcess(errorMessage);
   };
 };
 

@@ -7,6 +7,6 @@ describe('Sample Tests', function() {
   });
 
   it('can equalize for strings', function() {
-    expect('hello').toEqual('hello');
+    expect(3).toEqual(3);
   });
 });
