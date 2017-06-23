@@ -39,3 +39,10 @@ function expect(testvalue) {
   }
 
 };
+
+function Iggy(object, method, returnvalue) {
+  object[method] = function() {
+    return returnvalue
+  }
+
+}
