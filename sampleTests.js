@@ -14,4 +14,13 @@ describe('Sample Tests', function() {
     expect([1,2,"3"]).toContain("3");
   });
 
+  it('checks Contain matcher', function() {
+    var ObjectUnderTest = function() {}
+    ObjectUnderTest.prototype.sayhello= function () {
+      return 'hello'
+    };
+    Iggy(ObjectUnderTest, 'sayhello', 'hello')
+    expect(ObjectUnderTest.sayhello()).toEqual('hello');
+  });
+
 });
