@@ -7,6 +7,11 @@ describe('Sample Tests', function() {
   });
 
   it('can equalize for strings', function() {
-    expect(3).toEqual(4);
+    expect(3).toEqual(3);
   });
+
+  it('checks Contain matcher', function() {
+    expect([1,2,"3"]).toContain("3");
+  });
+
 });
