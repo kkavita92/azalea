@@ -40,9 +40,18 @@ function expect(testvalue) {
 
 };
 
-function Iggy(object, method, returnvalue) {
-  object[method] = function() {
-    return returnvalue
-  }
+// Spies
+
+function Iggy(object, method) {
+
+  function andReturn(returnvalue) {
+    object[method] = function() {
+      return returnvalue
+    };
+  };
+
+  return {
+    andReturn: andReturn
+  };
 
 }

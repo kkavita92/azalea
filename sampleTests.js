@@ -1,5 +1,14 @@
 var Thing = function() {};
 
+var ObjectUnderTest = function() {}
+ObjectUnderTest.prototype.sayhello= function () {
+  return 'hello';
+};
+
+ObjectUnderTest.prototype.saybye = function () {
+  return 'bye';
+};
+
 describe('Sample Tests', function() {
   it('can pick up definition errors', function() {
     var thing = new Thing();
@@ -15,12 +24,9 @@ describe('Sample Tests', function() {
   });
 
   it('checks Contain matcher', function() {
-    var ObjectUnderTest = function() {}
-    ObjectUnderTest.prototype.sayhello= function () {
-      return 'hello'
-    };
-    Iggy(ObjectUnderTest, 'sayhello', 'hello')
+    Iggy(ObjectUnderTest, 'sayhello').andReturn('hello')
     expect(ObjectUnderTest.sayhello()).toEqual('hello');
   });
+
 
 });
