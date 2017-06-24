@@ -62,4 +62,4 @@ function Iggy(object, method) {
     andReturn: andReturn
   };
 
-}
+};
