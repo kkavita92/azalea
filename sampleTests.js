@@ -15,11 +15,15 @@ describe('Sample Tests', function() {
     expect(thing).toBeDefined();
   });
 
-  it('can equalize for strings', function() {
-    expect(3).toEqual(3);
+  it('checks toEqual matcher', function() {
+    expect(3).toEqual("3");
   });
 
-  it('checks Contain matcher', function() {
+  it('checks toBe matcher', function() {
+    expect(3).toBe(3);
+  });
+
+  it('checks toContain matcher', function() {
     expect([1,2,"3"]).toContain("3");
   });
 

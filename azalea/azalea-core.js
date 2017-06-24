@@ -3,8 +3,15 @@ function expect(testvalue) {
   var test = document.getElementById("test");
   var errorMessage;
 
-  function toEqual(actualvalue) {
+  function toBe(actualvalue) {
     if(testvalue !== actualvalue) {
+      errorMessage = ` - Expected "${testvalue}" to be "${actualvalue}".`;
+      runErrorProcess(errorMessage);
+    };
+  };
+
+  function toEqual(actualvalue) {
+    if(testvalue != actualvalue) {
       errorMessage = ` - Expected "${testvalue}" to equal "${actualvalue}".`;
       runErrorProcess(errorMessage);
     };
@@ -32,6 +39,7 @@ function expect(testvalue) {
   };
 
   return {
+    toBe: toBe,
     toEqual: toEqual,
     toNotEqual: toNotEqual,
     toContain: toContain,
