@@ -32,7 +32,7 @@ function expect(testvalue) {
   };
 
   function toBeDefined() {
-    if(void 0 == testvalue) {
+    if(testvalue == void 0) {
       errorMessage = ` - Expected ${testvalue} to be defined.`
       runErrorProcess(errorMessage);
     };

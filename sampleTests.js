@@ -10,7 +10,7 @@ ObjectUnderTest.prototype.saybye = function () {
 };
 
 describe('Sample Tests', function() {
-  it('can pick up definition errors', function() {
+  it('checks to toBeDefined matcher', function() {
     var thing = new Thing();
     expect(thing).toBeDefined();
   });
