@@ -23,7 +23,7 @@ describe('Sample Tests', function() {
     expect([1,2,"3"]).toContain("3");
   });
 
-  it('checks Contain matcher', function() {
+  it('checks if spy is working', function() {
     Iggy(ObjectUnderTest, 'sayhello').andReturn('hello')
     expect(ObjectUnderTest.sayhello()).toEqual('hello');
   });
