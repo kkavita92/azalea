@@ -38,12 +38,20 @@ function expect(testvalue) {
     };
   };
 
+  function toBeNull() {
+    if(null !== testvalue) {
+      errorMessage = ` - Expected ${testvalue} to be null.`
+      runErrorProcess(errorMessage);
+    };
+  };
+
   return {
     toBe: toBe,
     toEqual: toEqual,
     toNotEqual: toNotEqual,
     toContain: toContain,
-    toBeDefined: toBeDefined
+    toBeDefined: toBeDefined,
+    toBeNull: toBeNull
   }
 
 };
