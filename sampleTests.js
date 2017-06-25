@@ -31,6 +31,11 @@ describe('Sample Tests', function() {
     expect(null).toBeNull();
   });
 
+  it('checks toThrowError matcher', function() {
+    var thing = new Thing();
+    expect(thing.error()).toThrowError(new Error);
+  });
+
   it('checks if spy is working', function() {
     Iggy(ObjectUnderTest, 'sayhello').andReturn('hello')
     expect(ObjectUnderTest.sayhello()).toEqual('hello');
