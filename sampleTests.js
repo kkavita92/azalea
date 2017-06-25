@@ -1,6 +1,11 @@
 var Thing = function() {};
 
+Thing.prototype.error = function () {
+  throw new Error;
+};
+
 var ObjectUnderTest = function() {}
+
 ObjectUnderTest.prototype.sayhello= function () {
   return 'hello';
 };
@@ -33,6 +38,7 @@ describe('Sample Tests', function() {
 
   it('checks toThrowError matcher', function() {
     var thing = new Thing();
+    var other;
     expect(thing.error()).toThrowError(new Error);
   });
 

@@ -45,13 +45,20 @@ function expect(testvalue) {
     };
   };
 
+  function toThrowError(actualvalue) {
+    if (typeof actualvalue != 'function') {
+        throw new Error('Actual value is not a Function');
+      }
+  };
+
   return {
     toBe: toBe,
     toEqual: toEqual,
     toNotEqual: toNotEqual,
     toContain: toContain,
     toBeDefined: toBeDefined,
-    toBeNull: toBeNull
+    toBeNull: toBeNull,
+    toThrowError: toThrowError
   }
 
 };
