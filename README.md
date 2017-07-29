@@ -1,5 +1,26 @@
 ## What is Azalea? 
-Azalea is our valiant attempt at writing a JS testing framework. Feel free to contribute! 
+Azalea is our valiant attempt at writing a JavaScript testing framework from scratch (purely for learning purposes). It is heavily inspired by [Jasmine](https://github.com/jasmine/jasmine) in terms of syntax and how it is run. 
+
+## How To Run Azalea?
+
+
+## Matchers
+* toBe
+* toEqual
+* toNotEqual
+* toContain
+* toBeDefined
+* toBeNull
+
+## Spies 
+
+Spies work similarly to as they do in Jasmine. An example of how you would use one:
+```
+it('using a spy', function() {
+    Iggy(ObjectUnderTest, 'sayhello').andReturn('hello')
+    expect(ObjectUnderTest.sayhello()).toEqual('hello');
+  });
+```
 
 ## Upcoming Features:
 * Running Azalea from command line
@@ -7,8 +28,8 @@ Azalea is our valiant attempt at writing a JS testing framework. Feel free to co
 
 
 ## Contributor(s): 
-[Charlotte Feather](https://github.com/Charliefea)
-[Kavita Kalaichelvan](https://github.com/kkavita92)
+* [Kavita Kalaichelvan](https://github.com/kkavita92)
+* [Charlotte Feather](https://github.com/Charliefea)
 
 
 
