@@ -2,12 +2,13 @@
 Azalea is our valiant attempt at writing a JavaScript testing framework from scratch (purely for learning purposes). It is heavily inspired by [Jasmine](https://github.com/jasmine/jasmine) in terms of syntax and how it is run. 
 
 ## How To Run Azalea?
+```
 * Clone the repo
 * Copy Azalea directory into your project directory 
 * Extract SpecRunner.html from Azalea folder into root directory
 * Add source and test files into SpecRunner.html where specified
 * Open SpecRunner.html in a browser
-
+```
 
 ## Matchers
 * toBe
